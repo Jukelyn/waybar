@@ -131,7 +131,7 @@
       "critical": 80
     },
     "format": "{usage}% ",
-    "tooltip": false
+    "tooltip": true
   },
   "memory": {
     "states": {
