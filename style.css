@@ -1,0 +1,75 @@
+@define-color soft-black #000100;
+@define-color soft-white #EAEFFE;
+@define-color soft-purple #9787F3;
+@define-color deep-purple #2D274B;
+
+/* Overall bar */
+* {
+    background-color: transparent;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 12pt;
+    margin: 0px 2px;
+    color: @soft-white;
+}
+
+/* Clock */
+#clock {
+    color: @soft-white;
+    font-weight: bold;
+}
+
+/* Workspace */
+#workspaces {
+    border-radius: 4px;
+}
+
+#workspaces .active {
+    background: @soft-purple;
+}
+
+/* Battery */
+#battery {
+    color: #6BCB77;
+}
+
+/* CPU / Memory */
+#cpu, #memory {
+    color: #CC3363;
+}
+
+/* Network */
+#network {
+    color: @soft-purple;
+}
+
+/* Custom hover effects */
+#workspaces .active:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover {
+    background-color: #86CD82;
+    color: #07060E;
+}
+
+/* Separator */
+.separator {
+    color: #F8F3F1;
+}
+
+/* Module boxes */
+.module {
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Alerts */
+.warning {
+    color: #FF6B6B;
+    font-weight: bold;
+}
+
+.critical {
+    color: #FF3D3D;
+    font-weight: bold;
+}
