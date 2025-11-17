@@ -5,71 +5,84 @@
 
 /* Overall bar */
 * {
-    background-color: transparent;
-    font-family: 'Source Code Pro', sans-serif;
-    font-size: 12pt;
-    margin: 0px 2px;
-    color: @soft-white;
+  background-color: transparent;
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 12pt;
+  margin: 0px 2px;
+  color: @soft-white;
 }
 
 /* Clock */
 #clock {
-    color: @soft-white;
-    font-weight: bold;
+  color: @soft-white;
+  font-weight: bold;
 }
 
 /* Workspace */
 #workspaces {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 #workspaces .active {
-    background: @soft-purple;
+  background: @soft-purple;
 }
 
 /* Battery */
 #battery {
-    color: #6BCB77;
+  color: #6bcb77;
 }
 
 /* CPU / Memory */
-#cpu, #memory {
-    color: #CC3363;
+#cpu,
+#memory {
+  color: @soft-white;
+  padding-right: 10px; /* these icons are kinda annoying and go up to the edge */
 }
 
 /* Network */
 #network {
-    color: @soft-purple;
+  color: @soft-purple;
 }
 
 /* Custom hover effects */
 #workspaces .active:hover,
+#pulseaudio:hover,
+#backlight:hover,
 #network:hover,
-#battery:hover,
+#disk:hover,
 #cpu:hover,
-#memory:hover {
-    background-color: #86CD82;
-    color: #07060E;
+#memory:hover,
+#temperature:hover,
+#battery:hover {
+  background-color: @soft-purple;
+  color: @soft-black;
 }
 
 /* Separator */
 .separator {
-    color: #F8F3F1;
+  color: #f8f3f1;
 }
 
 /* Module boxes */
 .module {
-    padding: 2px 4px;
-    border-radius: 4px;
+  padding: 2px 4px;
+  border-radius: 6px;
 }
 
 /* Alerts */
 .warning {
-    color: #FF6B6B;
-    font-weight: bold;
+  color: #ff6b6b;
+  font-weight: bold;
 }
 
 .critical {
-    color: #FF3D3D;
-    font-weight: bold;
+  color: #ff3d3d;
+  font-weight: bold;
+}
+
+tooltip {
+  background: rgba(151, 135, 243, 0.7); /* Soft purple with 70% opacity */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: @soft-white;
+  border-radius: 12px;
 }
