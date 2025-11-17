@@ -2,6 +2,7 @@
 @define-color soft-white #EAEFFE;
 @define-color soft-purple #9787F3;
 @define-color deep-purple #2D274B;
+@define-color balanced-blue #6ba6cb;
 @define-color good-green #6bcb77;
 @define-color warning-yellow #fff067;
 @define-color critical-red #ff3d3d;
@@ -94,6 +95,18 @@ window#waybar {
 #memory.critical,
 #temperature.critical,
 #battery.critical {
+  color: @critical-red;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @good-green;
+}
+
+#power-profiles-daemon.balanced {
+  color: @balanced-blue;
+}
+
+#power-profiles-daemon.performance {
   color: @critical-red;
 }
 
