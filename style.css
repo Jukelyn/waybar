@@ -2,6 +2,9 @@
 @define-color soft-white #EAEFFE;
 @define-color soft-purple #9787F3;
 @define-color deep-purple #2D274B;
+@define-color good-green #6bcb77;
+@define-color warning-yellow #fff067;
+@define-color critical-red #ff3d3d;
 
 /* Overall bar */
 * {
@@ -20,20 +23,16 @@
 
 /* Workspace */
 #workspaces {
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 #workspaces .active {
   background: @soft-purple;
 }
 
-/* Battery */
-#battery {
-  color: #6bcb77;
-}
-
 /* CPU / Memory */
 #cpu,
+#battery,
 #memory {
   color: @soft-white;
   padding-right: 10px; /* these icons are kinda annoying and go up to the edge */
@@ -70,14 +69,28 @@
 }
 
 /* Alerts */
-.warning {
-  color: #ff6b6b;
-  font-weight: bold;
+#disk.good,
+#cpu.good,
+#memory.good,
+#temperature,
+#battery.good {
+  color: @good-green;
 }
 
-.critical {
-  color: #ff3d3d;
-  font-weight: bold;
+#disk.warning,
+#cpu.warning,
+#memory.warning,
+#temperature.warning,
+#battery.warning {
+  color: @warning-yellow;
+}
+
+#disk.critical,
+#cpu.critical,
+#memory.critical,
+#temperature.critical,
+#battery.critical {
+  color: @critical-red;
 }
 
 tooltip {

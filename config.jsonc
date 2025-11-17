@@ -89,6 +89,12 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "disk": {
+    "states": {
+      // this value or ABOVE for these states
+      "good": 0,
+      "warning": 60,
+      "critical": 90
+    },
     "interval": 30,
     "format": "{percentage_used}% 🖴",
     "path": "/",
@@ -97,16 +103,29 @@
     "tooltip-format": "{specific_used:0.2f}GiB used out of 250GiB"
   },
   "cpu": {
+    "states": {
+      // this value or ABOVE for these states
+      "good": 0,
+      "warning": 50,
+      "critical": 80
+    },
     "format": "{usage}% ",
     "tooltip": false
   },
   "memory": {
+    "states": {
+      // this value or ABOVE for these states
+      "good": 0,
+      "warning": 60,
+      "critical": 80
+    },
     "format": "{}% ",
     "tooltip": true,
     "tooltip-format": "Using {used:0.2f}GiB RAM"
   },
   "temperature": {
-    "critical-threshold": 80,
+    "warning-threshold": 85,
+    "critical-threshold": 100,
     "format": "{temperatureC}°C {icon}",
     "tooltip": true,
     "tooltip-format": "{temperatureF}°F",
@@ -115,8 +134,9 @@
   "battery": {
     "interval": 3,
     "states": {
-      "good": 95,
-      "warning": 30,
+      // getting below these values is what puts it in that state
+      "good": 100,
+      "warning": 50,
       "critical": 15
     },
     "format": "{capacity}% {icon}",
