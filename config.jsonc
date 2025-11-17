@@ -78,19 +78,14 @@
 	"tooltip": true,
 	"tooltip-format": "{specific_used:0.2f}GiB used out of 250GiB"
     },
-    "clock": {
-        "timezone": "America/New_York",
-        "format": "{:%I:%M %p}",
-        "tooltip": false
-    },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
         "format": "{}% ",
-	"tooltip": true,
-	"tooltip-format": "Using {used:0.2f}GiB RAM"
+        "tooltip": true,
+        "tooltip-format": "Using {used:0.2f}GiB RAM"
     },
     "temperature": {
         "critical-threshold": 80,
@@ -104,7 +99,7 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-	"interval": 3,
+        "interval": 3,
         "states": {
             "good": 95,
             "warning": 30,
@@ -118,6 +113,11 @@
     },
     "battery#bat2": {
         "bat": "BAT2"
+    },
+    "clock": {
+        "timezone": "America/New_York",
+        "format": "{:%I:%M %p}",
+        "tooltip": false
     },
     "network": {
         "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
