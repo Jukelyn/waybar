@@ -11,8 +11,16 @@
     "network",
     "custom/updates"
   ],
+  //   "modules-center" : ["mpd"],
   "modules-right": ["disk", "cpu", "memory", "temperature", "battery", "clock"],
   // Modules configuration
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
@@ -30,18 +38,29 @@
       "default": ""
     }
   },
-  "keyboard-state": {
-    "numlock": false,
-    "capslock": false,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
+  "pulseaudio": {
+    "states": {
+      "high": 65,
+      "med": 35,
+      "low": 1
+    },
+    "format": "{volume}% {icon}",
+    "format-muted": "{icon}",
+    "format-icons": ["🔉", "🔈", "🔊"],
+    "on-click": "pavucontrol"
   },
-  "hyprland/window": {
-    "max-length": 50,
-    "separate-outputs": true
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "network": {
+    "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
+    "format-ethernet": "eth {ipaddr}/{cidr}  {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "{ipaddr} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -69,13 +88,6 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
   "disk": {
     "interval": 30,
     "format": "{percentage_used}% 🖴",
@@ -100,10 +112,6 @@
     "tooltip-format": "{temperatureF}°F",
     "format-icons": ["", "", ""]
   },
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
-  },
   "battery": {
     "interval": 3,
     "states": {
@@ -124,26 +132,6 @@
     "timezone": "America/New_York",
     "format": "{:%I:%M %p}",
     "tooltip": false
-  },
-  "network": {
-    "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
-    "format-ethernet": "eth {ipaddr}/{cidr}  {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "tooltip-format-wifi": "{ipaddr} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  },
-  "pulseaudio": {
-    "states": {
-      "high": 65,
-      "med": 35,
-      "low": 1
-    },
-    "format": "{volume}% {icon}",
-    "format-muted": "{icon}",
-    "format-icons": ["🔉", "🔈", "🔊"],
-    "on-click": "pavucontrol"
   },
   "custom/notification": {
     "tooltip": false,
