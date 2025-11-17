@@ -130,7 +130,7 @@
         "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
         "format-ethernet": "eth {ipaddr}/{cidr}  {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
         "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{ipaddr} via {gwaddr}",
+        "tooltip-format-wifi": "{ipaddr} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
