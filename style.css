@@ -6,13 +6,17 @@
 @define-color warning-yellow #fff067;
 @define-color critical-red #ff3d3d;
 
-/* Overall bar */
+/* Everything */
 * {
-  background-color: transparent;
+  color: @soft-white;
   font-family: "Source Code Pro", sans-serif;
   font-size: 12pt;
+}
+
+/* Just the bar */
+window#waybar {
+  background-color: transparent;
   margin: 0px 1px;
-  color: @soft-white;
 }
 
 /* Clock */
