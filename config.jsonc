@@ -1,172 +1,178 @@
 {
-    "layer": "top",
-    "position": "top",
-    // "height": 34, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4,
-    "modules-left": ["hyprland/workspaces", "pulseaudio", "backlight", "network", "custom/updates"],
-    "modules-right": ["disk", "cpu", "memory", "temperature", "battery", "clock"],
-    // Modules configuration
-     "hyprland/workspaces": {
-         "disable-scroll": true,
-         "on-click": "activate",
-         "format": "{name}",
-         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
-         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
-         "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             "urgent": "",
-             "focused": "",
-             "default": ""
-         }
-     },
-    "keyboard-state": {
-        "numlock": false,
-        "capslock": false,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "hyprland/window": {
-        "max-length": 50,
-        "separate-outputs": true
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "disk": {
-	"interval": 30,
-	"format": "{percentage_used}% 🖴",
-	"path": "/",
-	"unit": "GiB",
-	"tooltip": true,
-	"tooltip-format": "{specific_used:0.2f}GiB used out of 250GiB"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% ",
-        "tooltip": true,
-        "tooltip-format": "Using {used:0.2f}GiB RAM"
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "tooltip": true,
-        "tooltip-format": "{temperatureF}°F",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "interval": 3,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "clock": {
-        "timezone": "America/New_York",
-        "format": "{:%I:%M %p}",
-        "tooltip": false
-    },
-    "network": {
-        "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
-        "format-ethernet": "eth {ipaddr}/{cidr}  {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{ipaddr} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-	"states": {
-	    "high": 65,
-	    "med": 35,
-	    "low": 1,
-	},
-        "format": "{volume}% {icon}",
-        "format-muted": "{icon}",
-	"format-icons": ["🔉", "🔈","🔊"],
-        "on-click": "pavucontrol"
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{} {icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span> ",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span> ",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span> ",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span> ",
-            "dnd-inhibited-none": ""
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "sleep 0.1 && swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-    "custom/updates": {
-        "format": "{} {icon}",
-        "return-type": "json",
-        "format-icons": {
-            "has-updates": "󱍷",
-            "updated": "󰂪"
-        },
-        "exec-if": "which waybar-module-pacman-updates",
-        "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --tooltip-align-columns 'Source Code Pro' --color-semver-updates F15D22,FFCE51,73C48F,48B9C7,88807C"
+  "layer": "top",
+  "position": "top",
+  // "height": 34, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 4,
+  "modules-left": [
+    "hyprland/workspaces",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "custom/updates"
+  ],
+  "modules-right": ["disk", "cpu", "memory", "temperature", "battery", "clock"],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "on-click": "activate",
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
+    "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
     }
+  },
+  "keyboard-state": {
+    "numlock": false,
+    "capslock": false,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  "hyprland/window": {
+    "max-length": 50,
+    "separate-outputs": true
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 2,
+    "consume-icons": {
+      "on": " "
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}% 🖴",
+    "path": "/",
+    "unit": "GiB",
+    "tooltip": true,
+    "tooltip-format": "{specific_used:0.2f}GiB used out of 250GiB"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% ",
+    "tooltip": true,
+    "tooltip-format": "Using {used:0.2f}GiB RAM"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "tooltip": true,
+    "tooltip-format": "{temperatureF}°F",
+    "format-icons": ["", "", ""]
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "interval": 3,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "clock": {
+    "timezone": "America/New_York",
+    "format": "{:%I:%M %p}",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
+    "format-ethernet": "eth {ipaddr}/{cidr}  {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "tooltip-format-wifi": "{ipaddr} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "states": {
+      "high": 65,
+      "med": 35,
+      "low": 1
+    },
+    "format": "{volume}% {icon}",
+    "format-muted": "{icon}",
+    "format-icons": ["🔉", "🔈", "🔊"],
+    "on-click": "pavucontrol"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span> ",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span> ",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span> ",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span> ",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/updates": {
+    "format": "{} {icon}",
+    "return-type": "json",
+    "format-icons": {
+      "has-updates": "󱍷",
+      "updated": "󰂪"
+    },
+    "exec-if": "which waybar-module-pacman-updates",
+    "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --tooltip-align-columns 'Source Code Pro' --color-semver-updates F15D22,FFCE51,73C48F,48B9C7,88807C"
+  }
 }
