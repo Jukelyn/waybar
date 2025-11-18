@@ -11,7 +11,7 @@
 * {
   color: @soft-white;
   font-family: "Source Code Pro", sans-serif;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 /* Just the bar */
@@ -47,6 +47,11 @@ window#waybar {
 /* Network */
 #network {
   color: @soft-purple;
+}
+
+#network.disconnected {
+  font-weight: bold;
+  color: @critical-red;
 }
 
 /* Custom hover effects */
