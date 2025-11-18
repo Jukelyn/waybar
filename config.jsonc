@@ -38,19 +38,18 @@
     }
   },
   "pulseaudio": {
-    "states": {
-      "high": 65,
-      "med": 35,
-      "low": 1
-    },
     "format": "{volume}% {icon}",
-    "format-muted": "{icon}",
-    "format-icons": ["🔉", "🔈", "🔊"],
+    "format-bluetooth": "{volume}% ",
+    "format-muted": "",
+    "format-icons": {
+	"default": ["🔈", "🔊"]
+    },
     "on-click": "pavucontrol"
   },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "tooltip": false
   },
   "network": {
     "format-wifi": "  {essid} {bandwidthUpBytes}↑ {bandwidthDownBytes}↓",
