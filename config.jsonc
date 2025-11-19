@@ -11,8 +11,18 @@
     "backlight",
     "network",
   ],
-  "modules-center": ["power-profiles-daemon", "mpd"],
-  "modules-right": ["disk", "cpu", "memory", "temperature", "battery", "clock"],
+  "modules-center": [
+    "power-profiles-daemon",
+    "mpd"
+  ],
+  "modules-right": [
+    "disk",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "clock"
+  ],
   // Modules configuration
   "idle_inhibitor": {
     "format": "{icon}",
@@ -27,20 +37,15 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
-    "disable-scroll": true,
+    "format": "{icon}",
     "on-click": "activate",
-    "format": "{name}",
+    "disable-scroll": true,
     "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
     "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "urgent": "",
-      "focused": "",
-      "default": ""
+      "active": "\u2b24",
+      // "default": "\u25CB"
+      "default": "\u25ef"
     }
   },
   "pulseaudio": {
@@ -48,13 +53,26 @@
     "format-bluetooth": "{volume}% ",
     "format-muted": "",
     "format-icons": {
-	"default": ["🔈", "🔊"]
+      "default": [
+        "🔈",
+        "🔊"
+      ]
     },
     "on-click": "pavucontrol"
   },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "tooltip": false
   },
   "network": {
@@ -144,7 +162,11 @@
     "format": "{temperatureC}°C {icon}",
     "tooltip": true,
     "tooltip-format": "{temperatureF}°F",
-    "format-icons": ["", "", ""]
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
   },
   "battery": {
     "interval": 3,
@@ -158,7 +180,13 @@
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "battery#bat2": {
     "bat": "BAT2"

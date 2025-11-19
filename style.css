@@ -28,16 +28,44 @@ window#waybar {
 
 /* Workspace */
 #workspaces {
-  border-radius: 2px;
+  border: transparent;
+  outline: transparent;
 }
 
-#workspaces .active,
-#workspaces .active:hover {
-  background: @balanced-blue;
+#workspaces button {
+  padding: 0.4em 0.2em;
+  border: transparent;
+  outline: transparent;
 }
 
-#workspaces button:hover {
-  background: @soft-purple;
+#workspaces button.active {
+  border: transparent;
+  outline: transparent;
+}
+
+#workspaces button.visible {
+  border: transparent;
+  outline: transparent;
+}
+
+#workspaces button.urgent {
+  border: transparent;
+  outline: transparent;
+}
+
+#workspaces button.empty {
+  border: transparent;
+  outline: transparent;
+}
+
+#workspaces button.persistent {
+  border: transparent;
+  outline: transparent;
+}
+
+#workspaces button.hidden {
+  border: transparent;
+  outline: transparent;
 }
 
 /* Annoying padding issues w/ icons */
@@ -75,11 +103,6 @@ window#waybar {
 #cpu:hover,
 #memory:hover {
   background-color: @soft-purple;
-}
-
-/* Separator */
-.separator {
-  color: #f8f3f1;
 }
 
 /* Module boxes */
