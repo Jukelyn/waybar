@@ -31,7 +31,12 @@ window#waybar {
   border-radius: 2px;
 }
 
-#workspaces .active {
+#workspaces .active,
+#workspaces .active:hover {
+  background: @balanced-blue;
+}
+
+#workspaces button:hover {
   background: @soft-purple;
 }
 
@@ -55,7 +60,6 @@ window#waybar {
 }
 
 /* Custom hover effects */
-#workspaces .active:hover,
 #pulseaudio:hover,
 #backlight:hover,
 #network:hover,
