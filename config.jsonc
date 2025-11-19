@@ -5,6 +5,7 @@
   // "width": 1280, // Waybar width
   "spacing": 4,
   "modules-left": [
+    "custom/archicon",
     "hyprland/workspaces",
     "pulseaudio",
     "backlight",
@@ -19,6 +20,11 @@
       "activated": "",
       "deactivated": ""
     }
+  },
+  "custom/archicon": {
+    "format": "",
+    "on-click": "wofi --show drun --style ~/.config/wofi/styles.css",
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
