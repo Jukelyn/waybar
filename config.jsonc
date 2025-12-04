@@ -16,7 +16,8 @@
     "mpd"
   ],
   "modules-right": [
-    "disk",
+    "custom/diskdf",
+    // "disk",
     "cpu",
     "memory",
     "temperature",
@@ -121,19 +122,26 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
-  "disk": {
-    "states": {
-      // this value or ABOVE for these states
-      "good": 0,
-      "warning": 60,
-      "critical": 90
-    },
+//  "disk": {
+//   "states": {
+//      // this value or ABOVE for these states
+//      "good": 0,
+//      "warning": 60,
+//      "critical": 90
+//    },
+//    "interval": 30,
+//    "format": "{percentage_used}% 🖴",
+//    "path": "/",
+//    "unit": "GiB",
+//    "tooltip": true,
+//    "tooltip-format": "{specific_used:0.2f}GiB used out of {specific_total:0.2f}GiB"
+//  },
+  "custom/diskdf": {
+    "exec": "~/.config/waybar/scripts/disk_df.sh",
+    "return-type": "json",
     "interval": 30,
-    "format": "{percentage_used}% 🖴",
-    "path": "/",
-    "unit": "GiB",
-    "tooltip": true,
-    "tooltip-format": "{specific_used:0.2f}GiB used out of {specific_total:0.2f}GiB"
+    "format": "{text}",
+    "tooltip": true
   },
   "cpu": {
     "states": {
